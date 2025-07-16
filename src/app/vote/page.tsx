@@ -299,7 +299,7 @@ export default function VotePage() {
                   <h3 className="text-lg font-semibold text-gray-900">NOTA</h3>
                   <p className="text-gray-600">None of the Above</p>
                   <p className="text-sm text-gray-500 mt-1">
-                    Choose this option if you don't want to vote for any candidate
+                    Choose this option if you don&apos;t want to vote for any candidate
                   </p>
                 </div>
                 <div className="flex-shrink-0">

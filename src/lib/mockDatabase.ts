@@ -410,7 +410,7 @@ class MockDatabase {
     return this.officers.find(officer => officer.employeeId === employeeId) || null;
   }
 
-  async getVotingStats(): Promise<any> {
+  async getVotingStats(): Promise<{ totalRegistered: number; totalVoted: number; totalPending: number; voteDistribution: { candidates: Array<{ id: string; name: string; party: string; constituency: string; votes: number }>; nota: number }; constituencyBreakdown: { [key: string]: { registered: number; voted: number; pending: number } }; recentActivity: Array<{ id: string; voterName: string; candidateName: string; timestamp: Date; constituency: string }> }> {
     const totalUsers = this.users.length;
     const totalVotes = this.votes.length;
     
@@ -426,7 +426,7 @@ class MockDatabase {
     });
 
     const constituencies = ['Mumbai North', 'Mumbai South', 'Delhi Central', 'Delhi East', 'Bangalore North', 'Bangalore South'];
-    const constituencyStats: { [key: string]: any } = {};
+    const constituencyStats: { [key: string]: { registered: number; voted: number; pending: number } } = {};
     
     constituencies.forEach(constituency => {
       const constituencyUsers = this.users.filter(u => u.constituency === constituency);

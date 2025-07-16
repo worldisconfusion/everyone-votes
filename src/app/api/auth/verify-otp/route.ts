@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user exists
-    let user = await mockDB.findUserByMobile(mobile);
+    const user = await mockDB.findUserByMobile(mobile);
     
     if (user) {
       // Existing user - login

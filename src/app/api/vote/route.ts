@@ -46,9 +46,9 @@ export async function POST(request: NextRequest) {
         constituency: user.constituency,
         isNOTA: Boolean(isNOTA)
       });
-    } catch (voteError: any) {
+    } catch (voteError: unknown) {
       return NextResponse.json(
-        { error: voteError.message || 'Failed to record vote' },
+        { error: voteError instanceof Error ? voteError.message : 'Failed to record vote' },
         { status: 400 }
       );
     }

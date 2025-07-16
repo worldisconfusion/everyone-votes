@@ -135,7 +135,7 @@ export default function LoginPage() {
                 maxLength={10}
               />
               <p className="text-xs text-gray-500 mt-1">
-                We'll send an OTP to verify your identity
+                We&apos;ll send an OTP to verify your identity
               </p>
             </div>
 

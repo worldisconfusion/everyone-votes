@@ -86,9 +86,9 @@ export async function POST(request: NextRequest) {
           hasVoted: user.hasVoted
         }
       });
-    } catch (registrationError: any) {
+    } catch (registrationError: unknown) {
       return NextResponse.json(
-        { error: registrationError.message || 'Registration failed' },
+        { error: registrationError instanceof Error ? registrationError.message : 'Registration failed' },
         { status: 400 }
       );
     }

@@ -60,8 +60,8 @@ export async function GET(request: NextRequest) {
 
     // Get vote distribution for the constituency
     const voteDistribution = dashboardStats.voteDistribution.candidates
-      .filter((candidate: any) => constituency === 'All' || candidate.constituency === constituency)
-      .map((candidate: any) => ({
+      .filter((candidate: { constituency: string }) => constituency === 'All' || candidate.constituency === constituency)
+      .map((candidate: { id: string; name: string; party: string; votes: number }) => ({
         candidateId: candidate.id,
         candidateName: candidate.name,
         candidateParty: candidate.party,
@@ -72,7 +72,7 @@ export async function GET(request: NextRequest) {
     // Add NOTA votes
     if (dashboardStats.voteDistribution.nota > 0) {
       voteDistribution.push({
-        candidateId: null,
+        candidateId: 'NOTA',
         candidateName: 'NOTA',
         candidateParty: 'None',
         votes: dashboardStats.voteDistribution.nota,
@@ -82,11 +82,11 @@ export async function GET(request: NextRequest) {
 
     // Get recent activity
     const recentActivity = dashboardStats.recentActivity
-      .filter((activity: any) => constituency === 'All' || activity.constituency === constituency)
-      .map((activity: any) => ({
+      .filter((activity: { constituency: string }) => constituency === 'All' || activity.constituency === constituency)
+      .map((activity: { voterName: string; candidateName: string; timestamp: Date }) => ({
         voterName: activity.voterName,
         candidateName: activity.candidateName,
-        timestamp: activity.timestamp,
+        timestamp: activity.timestamp.toISOString(),
         isNOTA: activity.candidateName === 'NOTA'
       }));
 

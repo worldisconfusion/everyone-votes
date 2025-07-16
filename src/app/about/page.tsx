@@ -29,7 +29,7 @@ export default function AboutPage() {
             About Everyone Votes
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            India's first comprehensive online voting platform designed to make democracy accessible to every citizen, regardless of their location.
+            India&apos;s first comprehensive online voting platform designed to make democracy accessible to every citizen, regardless of their location.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">NOTA Support</h3>
-                  <p className="text-gray-600 text-sm">Express your dissent with the "None of the Above" option</p>
+                  <p className="text-gray-600 text-sm">Express your dissent with the &quot;None of the Above&quot; option</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -188,7 +188,7 @@ export default function AboutPage() {
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact & Support</h2>
             <p className="text-gray-700 mb-4">
-              Have questions about the voting process or need technical support? We're here to help.
+              Have questions about the voting process or need technical support? We&apos;re here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center text-gray-600">

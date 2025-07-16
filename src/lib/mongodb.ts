@@ -4,7 +4,7 @@
 import { mockDB } from './mockDatabase';
 
 // Mock connection function that returns success immediately
-async function connectDB(): Promise<any> {
+async function connectDB(): Promise<{ success: boolean }> {
   // For demo purposes, we don't need actual database connection
   // The mockDB is already initialized and ready to use
   console.log('Using mock database - no MongoDB connection required');

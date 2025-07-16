@@ -15,7 +15,7 @@ export default function HomePage() {
             Welcome to <span className="text-indigo-600">Everyone Votes</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            India's first secure online voting platform enabling citizens to vote from anywhere. 
+            India&apos;s first secure online voting platform enabling citizens to vote from anywhere. 
             Powered by OTP verification, Aadhar authentication, and blockchain-grade security.
           </p>
           <div className="flex justify-center space-x-4 text-sm text-gray-500">
@@ -162,7 +162,7 @@ export default function HomePage() {
             </h3>
             <p className="text-gray-600 mb-6">
               Join millions of Indians who have already embraced the future of voting. 
-              Your vote matters, and now it's easier than ever.
+              Your vote matters, and now it&apos;s easier than ever.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
